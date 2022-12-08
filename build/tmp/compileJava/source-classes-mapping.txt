@@ -1,6 +1,8 @@
-ScriptPython.java
- ScriptPython
-ArgParserOptions.java
- ArgParserOptions
 Main.java
  Main
+Frida/FridaConfig.java
+ Frida.FridaConfig
+Utilities/ArgParserOptions.java
+ Utilities.ArgParserOptions
+Frida/FridaRunner.java
+ Frida.FridaRunner
