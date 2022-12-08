@@ -7,18 +7,23 @@ public class ArgParserOptions {
     {
         Options options = new Options();
 
-        Option fridaScriptName = new Option("f", "fridaScript", true, "Frida script name");
+        Option fridaScriptName   = Option.builder("f")
+                .argName("frida-script")
+                .hasArg()
+                .desc("Frida script name")
+                .build();
+
+        Option processName   = Option.builder("p")
+                .argName("process")
+                .hasArg()
+                .desc("android process name")
+                .build();
+
+
         fridaScriptName.setRequired(true);
-        options.addOption(fridaScriptName);
-
-        Option processName = new Option("p", "process", true, "android process name");
         processName.setRequired(true);
+        options.addOption(fridaScriptName);
         options.addOption(processName);
-
-        CommandLineParser parser = new DefaultParser();
-        HelpFormatter formatter = new HelpFormatter();
-        CommandLine cmd = null;//not a good practice, it serves it purpose
-
         this.options = options;
     }
 

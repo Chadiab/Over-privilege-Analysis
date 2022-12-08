@@ -9,8 +9,9 @@ public class ScriptPython {
 
     public void runScript() {
         Process process;
+
         try {
-            process = Runtime.getRuntime().exec("python C:\\Users\\MSI\\Desktop\\pythonProject\\main.py");
+            process = Runtime.getRuntime().exec("python scripts/frida-python.py");
             mProcess = process;
         } catch (Exception e) {
             System.out.println("Exception Raised" + e.toString());
