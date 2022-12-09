@@ -1,15 +1,21 @@
+package Frida;
+
 public class FridaConfig {
 
-        String fridaPath;
+        String fridaScriptPath;
         String processName;
+
+        String pythonInterpreter;
         public FridaConfig(String fileName, String processName){
 
             String userDirectory = System.getProperty("user.dir");
-            System.out.println(userDirectory);
+            String pathToPythonInterpreter = userDirectory+
+                    "/src/main/scripts/venv/bin/python3";
             String pathToPythonScripts= userDirectory+
                     "/src/main/scripts/"+
                     fileName;
-            this.fridaPath = pathToPythonScripts;
+            this.pythonInterpreter = pathToPythonInterpreter;
+            this.fridaScriptPath = pathToPythonScripts;
             this.processName = processName;
 
         }

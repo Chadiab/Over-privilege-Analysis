@@ -1,3 +1,7 @@
+import Frida.FridaConfig;
+import Frida.FridaRunner;
+import Utilities.AndroidDebuggerBridge;
+import Utilities.ArgParserOptions;
 import org.apache.commons.cli.*;
 
 
@@ -14,9 +18,17 @@ public class Main {
         {
             final String filename = cmd.getOptionValue("f");
             final String processName = cmd.getOptionValue("p");
-            // Create Frida Config instance here
-
-            // Run Frida script
+            // Check Emulator & Frida-server
+            if (AndroidDebuggerBridge.CheckEmulator() && AndroidDebuggerBridge.CheckFridaServer())
+            {
+                // Create Frida Config instance here
+                FridaConfig fc = new FridaConfig(filename,processName);
+                // Run Frida script
+                FridaRunner.runScript(fc);
+            }
+            else {
+                System.out.print("Error : Emulator or frida-server is not found");
+            }
 
         }
         else formatter.printHelp("opa -f frida-filename -u target-process-name", argOptions.options);

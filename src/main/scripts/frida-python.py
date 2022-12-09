@@ -3,8 +3,11 @@ import frida, sys
 def on_message(message, data):
     if message['type'] == 'send':
         print("[*] {0}".format(message['payload']))
+        sys.stdout.flush()
     else:
         print(message)
+        sys.stdout.flush()
+
 
 jscode = """
 Java.perform(() => {
@@ -30,8 +33,9 @@ Java.perform(() => {
   };
 });
 """
-
-process = frida.get_usb_device().attach('nom')
+# "rock_paper_scissors"
+process_name= sys.argv[-1]
+process = frida.get_usb_device().attach(process_name)
 script = process.create_script(jscode)
 script.on('message', on_message)
 print('[*] Running CTF')
