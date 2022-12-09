@@ -1,3 +1,5 @@
+Utilities/AndroidDebuggerBridge.java
+ Utilities.AndroidDebuggerBridge
 Main.java
  Main
 Frida/FridaConfig.java

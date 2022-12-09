@@ -1,7 +1,5 @@
-plugins {
-    id 'java'
-}
-
+apply plugin: 'java'
+apply plugin: 'application'
 group 'org.example'
 version '1.0-SNAPSHOT'
 
@@ -14,11 +12,6 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     compile 'commons-cli:commons-cli:1.5.0'
 
-}
-
-task(runMain, dependsOn: 'classes', type: JavaExec) {
-    main = 'Main'
-    classpath = sourceSets.main.runtimeClasspath
 }
 
 test {

@@ -1,2 +1,6 @@
 Manifest-Version: 1.0
+Class-Path: file:/Users/daly.kh/.gradle/caches/modules-2/files-2.1/commo
+ ns-cli/commons-cli/1.5.0/dc98be5d5390230684a092589d70ea76a147925c/commo
+ ns-cli-1.5.0.jar
+Main-Class: Main/main
 
