@@ -1,3 +1,9 @@
+##TODO
+## sepeate JS Files
+## Auto-Run selected process if not running on Emulator
+
+
+
 import frida, sys
 
 def on_message(message, data):
