@@ -29,13 +29,13 @@ pip install -r requirements.txt
 1. Run Android Emulator
 2. Run Frida-server on android Emulator
 3. Run The APK on the Emulator
-4. Run java project with arguments -p processName -f pythonScriptName
+4. Run java project with arguments -p processName -f JsFilename
    * processName : APK process name - 
-   * pythonScriptName : Python script containing the JS instrumentation Code
+   * JsFilename : JavaScript script containing the instrumentation Code in ../scripts/JS folder
 # Tests
 The project was tested with :
 1. Test 1 :
    * APK : [rock_paper_scissors](https://github.com/ctfs/write-ups-2015/tree/master/seccon-quals-ctf-2015/binary/reverse-engineering-android-apk-1)
    * Emulator : Google Nexus 5 - Android 5.0 , API 21 ,  ARMv7l architecture processor
    * [Frida-server](https://github.com/frida/frida/releases/download/16.0.7/frida-server-16.0.7-android-arm.xz) :  v16.0.7
-
+   * Java binary was built using JDK 11
