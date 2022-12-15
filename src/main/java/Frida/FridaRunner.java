@@ -7,8 +7,10 @@ import java.io.InputStreamReader;
 public class FridaRunner {
     public static void runScript(FridaConfig fc ) {
         Process process;
-        String interpreter = fc.pythonInterpreter;
-        String cmd = interpreter + " "+ fc.fridaScriptPath+".py " + fc.processName;
+        String cmd = fc.pythonInterpreter +" "+ fc.fridaPythonRunnerPath + " "
+                +fc.fridaJsScriptPath // path to scripts/JS/<called_file>
+                +" "
+                +fc.processName; // Target - installed APK Name
         String s = null;
         try {
             process = Runtime.getRuntime().exec(cmd);

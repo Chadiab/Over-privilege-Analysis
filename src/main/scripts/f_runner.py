@@ -1,8 +1,5 @@
-import frida, sys
+import frida, sys,os
 
-##TODO
-## sepeate JS Files
-## Auto-Run selected process if not running on Emulator
 
 def on_message(message, data):
     if message['type'] == 'send':
@@ -12,20 +9,18 @@ def on_message(message, data):
         print(message)
         sys.stdout.flush()
 
-# "rock_paper_scissors"
 
 # --- Get Args
-js_file= sys.argv[1] +".js"
+js_file = sys.argv[1]
 process_name = sys.argv[-1]
-# ---- Load Js Code
-with open(js_file,"r","utf-8") as f:
-    jscode=f.readlines().strip()
+# ---- Pre-Load Js Code
+print(js_file)
+with open(js_file,'r',encoding="utf-8") as f:
+    jscode = f.read()
 
+print(jscode)
 process = frida.get_usb_device().attach(process_name)
 script = process.create_script(jscode)
 script.on('message', on_message)
-print('[*] Running CTF')
 script.load()
 sys.stdin.read()
-
-

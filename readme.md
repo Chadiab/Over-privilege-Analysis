@@ -30,7 +30,7 @@ pip install -r requirements.txt
 2. Run Frida-server on android Emulator
 3. Run The APK on the Emulator
 4. Run java project with arguments -p processName -f JsFilename
-   * processName : APK process name - 
+   * processName : APK process name  
    * JsFilename : JavaScript script containing the instrumentation Code in ../scripts/JS folder
 # Tests
 The project was tested with :
@@ -39,3 +39,5 @@ The project was tested with :
    * Emulator : Google Nexus 5 - Android 5.0 , API 21 ,  ARMv7l architecture processor
    * [Frida-server](https://github.com/frida/frida/releases/download/16.0.7/frida-server-16.0.7-android-arm.xz) :  v16.0.7
    * Java binary was built using JDK 11
+> run Java script with arguments :  -p rock_paper_scissors -f rock_paper_scissors
+   
