@@ -47,3 +47,11 @@ script.on('message', on_message)
 print('[*] Running CTF')
 script.load()
 sys.stdin.read()
+
+
+
+##TODO
+## Auto-run proces on emulator
+# com.example.seccon2015.rock_paper_scissors/.MainActivity
+# am start -n com.package.name/com.package.name.ActivityName
+# -> adb shell am start -n com.example.seccon2015.rock_paper_scissors/.MainActivityy
