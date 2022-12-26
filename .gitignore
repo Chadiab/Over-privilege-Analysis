@@ -1,0 +1,19 @@
+# IDE
+/.idea/
+
+# Mac lame stuff
+.DS_Store
+
+# Archives
+.xz
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# APKs
+.apk

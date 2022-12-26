@@ -2,21 +2,20 @@ package Frida;
 
 public class FridaConfig {
 
-        String fridaScriptPath;
-        String processName;
+    String fridaPythonRunnerPath;
+    String fridaJsScriptPath;
+    String pythonInterpreter;
+    String processName;
+    public FridaConfig(String fileName, String processName){
+        String userDirectory = System.getProperty("user.dir");
+        String pathToPythonInterpreter = userDirectory+ "/src/main/assets/venv/bin/python3";
+        String fridaPythonRunnerPath= userDirectory+ "/src/main/assets/f_runner.py";
+        String fridaJsScriptPath= userDirectory+ "/src/main/assets/JS/"+ fileName+".js";
+        // Construct config
+        this.pythonInterpreter = pathToPythonInterpreter;
+        this.fridaPythonRunnerPath = fridaPythonRunnerPath;
+        this.fridaJsScriptPath = fridaJsScriptPath;
+        this.processName = processName;
 
-        String pythonInterpreter;
-        public FridaConfig(String fileName, String processName){
-
-            String userDirectory = System.getProperty("user.dir");
-            String pathToPythonInterpreter = userDirectory+
-                    "/src/main/scripts/venv/bin/python3";
-            String pathToPythonScripts= userDirectory+
-                    "/src/main/scripts/"+
-                    fileName;
-            this.pythonInterpreter = pathToPythonInterpreter;
-            this.fridaScriptPath = pathToPythonScripts;
-            this.processName = processName;
-
-        }
+    }
 }
