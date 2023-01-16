@@ -2,9 +2,7 @@ Over-privilege-Analysis
 ===
 
 # Abstract 
-The project is intending to instrument Android Framework in order to extract its permissions mapping.
-
-At First, this repository will be a POC to achieve the desired goal.
+The project is intending to instrument Android Framework.
 
 # Features
 * Automated APK instrumentation via JS Scripts 
